@@ -1,0 +1,60 @@
+
+#memorial-form label{
+	float:left;
+	width:255px;
+	line-height:30px;
+	margin-bottom:10px;
+}
+#memorial-form input[type="text"], 
+#memorial-form input[type="password"]{
+	border:solid 1px #D5DDC8;
+	width:350px;
+	height:30px;
+	padding:3px;
+	margin-bottom:10px;
+}
+#memorial-form select{
+	border:solid 1px #D5DDC8;
+	width:610px;
+	height:30px;
+	padding:3px;
+	margin-bottom:10px;
+}
+#memorial-form input[type="file"]{
+	border:solid 1px #D5DDC8;
+	width:237px;
+	height:30px;
+	padding:3px;
+	margin-bottom:10px;
+	margin-right:10px;
+}
+#memorial-form .description{
+	margin-left:255px;
+	width:355px;
+	padding-bottom:10px;
+	line-height:16px;
+}
+#memorial-form .grippie{
+	display:none;	
+}
+#memorial-form textarea{
+	border:solid 1px #D5DDC8;
+	width:357px;
+	height:100px;
+	padding:3px;
+	margin-bottom:10px;	
+	font-size:14px;
+	line-height:16px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#memorial-form input[type="submit"]{
+	background:#0178A2;
+	border-radius:3px;
+	-webkit-border-radius:3px;
+	border:none;
+	cursor:pointer;
+	font:bold 16px/18px Arial, Helvetica, sans-serif;
+	padding:5px 10px;
+	margin:10px 0 0 255px;
+	color:#fff;
+}

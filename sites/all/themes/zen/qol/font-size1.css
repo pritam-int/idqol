@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-size:14px;
+	line-height:20px;
+}
+div#contentarea h2{
+	font-size:30px;
+	line-height:32px;
+}
+div#contentarea h3{
+	font-size:20px;
+	line-height:25px;
+}
+div#contentarea h4{
+	font-size:18px;
+	line-height:20px;
+}
+#contentarea p{
+	font-size:14px;
+	line-height:22px;
+}
+div.newslist{
+	font-size:12px;
+	line-height:16px;
+}
+div.loginsection label{
+	font-size:14px;
+	line-height:18px;
+}
+div#block-user-login label{
+	font-size:14px;
+	line-height:18px;
+}
+div.resourcesec{
+	font-size:12px;
+	line-height:16px;
+}
+div.footertop h2{
+	font-size:16px;
+	line-height:18px;
+}
+div.footertop p{
+	font-size:14px;
+	line-height:20px;
+}
+div.footernav li{
+	font-size:14px;
+	line-height:22px;
+}
+div.copyright{
+	font-size:11px;
+	line-height:43px;
+}
+.regionPan h4{
+	font-size:26px;
+	line-height:28px;
+}
+div#contentarea .regionPan p{
+	font-size:15px;
+	line-height:20px;
+}
+div#contentarea h3 a{
+	font-size:20px;
+	line-height:33px;
+}
+.custom_hospice .form-type-hierarchical-select .dropbox .dropbox-title{
+	font-size:14px;
+	line-height:15px;
+}
+.view-memorial .views-field-title{
+	font-size:20px;
+	line-height:25px;
+}
+div.view-hospice-user-profiles div.view-empty{
+	font-size:30px;
+	line-height:32px;
+}

@@ -1,0 +1,184 @@
+<?php
+    /***
+    * hook_init
+    ***/
+    function memorial_init() {
+      drupal_add_css(drupal_get_path('module', 'memorial') .'/css/memorial.css');
+    }
+    
+    /**	* Implementation of hook_permission().
+	*/
+	function memorial_permission() {
+	  // Restrict access to either of your new URLs.
+	  return array(
+	    'access memorial page' => array(
+	      'title' => t('Access Memorial Page'),
+	      'description' => t('Allow users to access memorial page'),
+	    ),
+	  );
+	}
+	   
+    
+    /***
+    * hook_menu
+    ***/
+    function memorial_menu() {        
+            $items = array();            
+            $items['add-memorial'] = array(
+					'title' => 'Add Memorial',
+					'page callback' => 'drupal_get_form',
+					'page arguments' => array('memorial_form'),
+					'access arguments' => array('access memorial page'),
+					'access callback' => 'user_access',
+					'type' => MENU_CALLBACK,
+            ); 
+	    
+	    return $items;
+    }
+    
+    /***
+    * function to create add job form
+    ***/
+    function memorial_form()
+    {
+    		 	$form = array();
+				$form['#attributes'] = array('enctype' => "multipart/form-data");
+				$form['memorial_title'] = array(
+	  				'#type' => 'textfield',
+	  				'#title' => t('Memorial Title'),
+	  				'#default_value' => '',
+	  				'#required' => TRUE,
+	  				'#size' => 20,
+				);
+				
+				$form['memorial_description'] = array(
+	   			'#type' => 'textarea',
+				'#title' => t('Memorial Description'),
+	   			'#default_value' => '',
+	   			'#required' => TRUE,
+	   			'#cols' => 12,
+				'#size' => 10,
+				'#rows' => 5,
+				);
+				
+				$form['memorial_file'] = array(
+					'#type' => 'file',
+					'#title' => t('Upload Image'),
+					'#required' => FALSE,
+					'#description' => t('Upload a file, allowed extensions: jpg, jpeg, png, gif'),
+					'#size' => 43,
+				);
+				
+				$form['memorial_donate'] = array(
+	  				'#type' => 'textfield',
+	  				'#title' => t('Donate $'),
+					'#description' => t('You can donate here as per you wish or can keep the field blank or 0 value'),
+	  				'#default_value' => '',
+	  				'#required' => FALSE,
+	  				'#size' => 20,
+				);
+				
+				$form['submit'] = array (
+	   			'#prefix' => '<div id="job_submit">',
+	   			'#type' => 'submit',
+	   			'#value' => 'Submit',
+	   			'#suffix' => '</div>'
+				);
+				
+				return $form;
+    }	
+    
+     /***
+    * hook_form_validate
+    ***/
+    function memorial_form_validate($form, &$form_state) {
+    	    
+    	$file = file_save_upload('memorial_file', array(
+			'file_validate_is_image' => array(),
+			'file_validate_extensions' => array('png gif jpg jpeg'),
+		));
+		//print_r($file);exit;
+		if ($file) {
+			if ($file = file_move($file, 'public://memorials')) {
+				$form_state['values']['memorial_file'] = $file;
+			}
+			else {
+				form_set_error('memorial_file', t("Failed to write the uploaded file the site's file folder."));
+			}
+		}
+		
+	 }
+    
+    /***
+    * hook_submit
+    ***/ 
+	function memorial_form_submit($form, &$form_state) {
+		global $user;	
+		
+		$memorial_title = $form_state['values']['memorial_title'];
+		$memorial_description = $form_state['values']['memorial_description'];
+		$memorial_donate = $form_state['values']['memorial_donate'];
+		$file = $form_state['values']['memorial_file'];
+		if(!empty($file)){
+		  unset($form_state['values']['memorial_file']);
+		  $file->status = FILE_STATUS_PERMANENT;
+		  $uploaded_file = file_save($file);
+		}
+		
+		
+		$node = new stdClass();
+		//$node = (object) NULL;
+	
+		$node->title = $memorial_title;
+		$node->type = 'memorials';	
+		$node->uid = $user->uid;	
+		$node->status = 0;
+		$node->promote = 0;
+		$node->language = LANGUAGE_NONE;
+		$node->created = time();
+		$node->log = t('Memorial created: '.$node->title);
+
+		node_object_prepare($node); //sets up all the default values
+
+		$node->field_memorial_description['und'][0]['value'] = $memorial_description;
+		if(!empty($file)){
+		$node->field_memorial_image['und'][0] = (array)$uploaded_file;
+		}
+		node_save($node);
+		
+		//structure the notification message		  
+		$output = t("A new memorial has been created and sent to administrator for moderation.");
+	 
+		drupal_set_message($output);
+		global $base_url;
+		if(!empty($memorial_donate) && $memorial_donate > 0){
+		  
+		  $amount = $memorial_donate;
+		  $item_name = "Your donation amount for ID-QOL";
+		  $cancel_url = $base_url."/memorial";
+		  $return_url = $base_url."/memorial";
+		  
+		  //$url = 'https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick&business=indusn_1331536262_biz@gmail.com&currency_code=USD&item_name='.$item_name.'&amount='.$amount.'&no_shipping=1&return='.$return_url.'&cancel_return='.$cancel_url;
+		  
+		  $url = 'https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=info@idahendoflfe.org&currency_code=USD&item_name='.$item_name.'&amount='.$amount.'&no_shipping=1&return='.$return_url.'&cancel_return='.$cancel_url;
+		  drupal_goto($path = $url, $options = array(), $http_response_code = 302);
+		}
+	
+		drupal_goto('memorial');
+	}
+
+	/****************** Form Alter ******************/
+	function memorial_form_alter(&$form, &$form_state, $form_id) {
+	  global $user;
+	      
+	  switch($form_id) {
+	    case 'user_profile_form':
+	        if(!in_array('administrator', $user->roles))
+		  unset($form['field_pricing']);
+	      
+		 break;
+	  }
+	  
+	}  
+	
+	/* *********************************************/	  

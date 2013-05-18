@@ -1,0 +1,22 @@
+<?php
+
+function job_node_insert($node){
+    global $user;
+    global $base_url;
+    if($node->type == "jobs" && $user->uid != 1){
+        $node_obj = node_load($node->nid);
+        $node_obj->status = 0;
+        node_save($node_obj);
+        
+        /*************Approval email to Admin*************/
+        $to = variable_get('site_mail', '');
+        $subject = "Idaho Quality Of Life - Publish the following job node";
+        $message = "Hello Admin,<br><br>Please publish the following Job node : <br><br>".$base_url."/node/".$node_obj->nid."/edit<br><br>Thank you.<br>Idaho Quality Of Life";
+        send_mail($to, $subject, $message);
+        drupal_set_message(t("Your Job '".$node_obj->title."' has been created and waiting for approval from Admin to publish!"), 'status');
+        drupal_goto($path = 'node/53', $options = array(), $http_response_code = 302);
+    }
+    
+}
+  
+  

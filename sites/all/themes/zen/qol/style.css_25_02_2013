@@ -1,0 +1,3375 @@
+/* CSS Document */
+
+@charset "utf-8";
+
+
+
+/* CSS Document */
+
+
+
+* { padding:0; margin:0; }
+
+
+
+body {
+
+	font-family:Arial, Helvetica, sans-serif;
+
+}
+
+img {
+
+	display:block;
+
+	border:none;
+
+	/*max-width:100%;*/
+
+}
+
+a {
+
+	text-decoration:none;
+
+	outline:none;
+
+}
+
+ul, ol, dl {
+
+	list-style-type:none;
+
+}
+
+input, select, textarea {
+
+	outline:none;
+
+}
+
+
+
+.block {
+
+margin:0;
+
+}
+
+
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, hr, table, fieldset {
+
+margin:0;
+
+}
+
+
+
+
+
+div#externalcontenterwarper{
+
+	color:#5F5F5F;
+
+	background:url(images/main-bg.jpg) repeat-x #fff;
+
+}
+
+
+
+
+
+
+
+.spacer{
+
+	font-size:0;
+
+	line-height:0;
+
+	height:0;
+
+	clear:both;
+
+}
+
+
+
+
+
+div#externalcontenter{
+
+max-width:960px;
+
+margin:0 auto;
+
+}
+
+
+
+
+
+
+
+div.navigation{
+
+padding:0;
+
+height:100%;
+
+}
+
+
+
+
+
+div.navigation ul{
+
+padding:0;
+
+margin:0;
+
+}
+
+
+
+div.navigation li{
+
+float:left;
+
+padding:0 18px;
+
+}
+
+
+
+div.navigation li a{
+
+font:normal 16px/46px "Lucida Sans Unicode", Arial, Tahoma, Verdana;
+
+color:#F1EFE0;
+
+text-decoration:none;
+
+}
+
+
+
+div.navigation li a:hover{
+
+color:#ACD590;
+
+}
+
+
+
+
+
+
+
+div#contentarea{
+
+padding:0;
+
+}
+
+
+
+
+
+div#leftpanel{
+
+width:630px;
+
+float:left;
+
+}
+
+
+
+
+
+div#leftpanel a{
+
+text-decoration:underline;
+
+}
+
+
+
+
+
+div#leftpanel a:hover{
+
+text-decoration:none;
+
+}
+
+
+
+
+
+div.logoportion{
+
+padding-bottom:25px;
+
+}
+
+
+
+div.findbutton{
+
+padding-left:0;
+
+}
+
+
+
+div.findbutton img{
+
+float:left;
+
+margin:0 10px;
+
+}
+
+
+
+
+
+.not-front div.findbutton img{
+
+float:none;
+
+margin:0;
+
+}
+
+
+
+.not-front a.scbutton{
+
+display:none;
+
+}
+
+
+
+
+
+div.buttonsection{
+
+background:url(images/button-secbg.jpg) no-repeat 50% 0;
+
+padding:10px 0 43px 0px;
+
+overflow:hidden;
+
+}
+
+.front .buttonsection{
+
+	padding-top:14px;
+
+	padding-left:0;
+
+}
+
+
+
+
+
+
+
+div.buttonsection img{
+
+float:left;
+
+padding:0 10px;
+
+}
+
+
+
+front .intro{
+
+padding:40px 0 0 0;
+
+}
+
+
+
+
+
+div#contentarea h2{
+
+font-weight:bold;
+
+font-family:"Times New Roman", Times, serif;
+
+color:#2C76A7;
+
+padding-bottom:15px;
+
+margin:0;
+
+}
+
+
+
+div#contentarea h3{
+
+font-weight:bold;
+
+font-family:"Times New Roman", Times, serif;
+
+color:#2C76A7;
+
+padding-bottom:12px;
+
+margin:0;
+
+}
+
+
+
+div#contentarea h4{
+
+font-weight:bold;
+
+font-family:"Times New Roman", Times, serif;
+
+color:#2c76a7;
+
+padding-bottom:10px;
+
+margin:0;
+
+}
+
+
+
+#contentarea p{
+
+font-family:Arial, Helvetica, sans-serif;
+
+color:#323027;
+
+padding-bottom:18px;
+
+margin:0;
+
+}
+
+
+
+#contentarea a{
+
+font-weight:bold;
+
+color:#2C76A7;
+
+text-decoration:underline;
+
+}
+
+
+
+div#contentarea a:hover{
+
+color:#000;
+
+}
+
+
+
+div#contentarea a:hover{
+
+color:#000;
+
+}
+
+
+
+
+
+div.videosection{
+
+padding:10px;
+
+background:#E9F4D9;
+
+border:solid 1px #D1E2BB;
+
+}
+
+
+
+div.mapsection{
+
+padding:40px 0;
+
+}
+
+
+
+
+
+
+
+div#rightpanel{
+
+width:252px;
+
+float:right;
+
+padding-left:37px;
+
+border-left:solid 1px #CBE4A9;
+
+margin-top:46px;
+
+}
+
+
+
+div.newssection{
+
+padding:0px 0 0 0;
+
+}
+
+
+
+
+
+
+
+div.newslist{
+
+padding:10px 0;
+
+font-family:Arial, Helvetica, sans-serif;
+
+color:#323027;
+
+}
+
+
+
+div.newslist p{
+
+padding:0 !important;
+
+margin:0 !important;
+
+}
+
+
+
+div.newslist strong{
+
+color:#256242;
+
+}
+
+
+
+div.newslist span{
+
+color:#2C76A7;
+
+}
+
+
+
+div.ourpertner{
+
+padding-bottom:40px;
+
+}
+
+
+
+div.sliderwarper{
+
+position:relative;
+
+}
+
+
+
+div#slider{
+
+width:191px;
+
+margin:0 auto;
+
+}
+
+
+
+div#prev{
+
+position:absolute;
+
+left:0;
+
+top:40%;
+
+cursor:pointer;
+
+}
+
+
+
+div#next{
+
+position:absolute;
+
+right:0;
+
+top:40%;
+
+cursor:pointer;
+
+}
+
+
+
+
+
+div.loginsection{
+
+padding-bottom:40px;
+
+}
+
+
+
+div.loginsection input[type="text"]{
+
+background:#E9F4D9;
+
+border:solid 1px #D5DDC8;
+
+width:242px;
+
+height:32px;
+
+padding:3px 0 0 10px;
+
+}
+
+
+
+div.loginsection input[type="button"]{
+
+background:#0178A2;
+
+border-radius:3px;
+
+-webkit-border-radius:3px;
+
+border:none;
+
+cursor:pointer;
+
+font:bold 16px/18px Arial, Helvetica, sans-serif;
+
+padding:5px 10px;
+
+margin:10px 0 0 0;
+
+color:#fff;
+
+}
+
+
+
+div.loginsection label{
+
+font-size:14px;
+
+line-height:18px;
+
+padding:0 0 10px 0;
+
+display:block;
+
+}
+
+
+
+
+
+div#block-user-login{
+
+padding-bottom:40px;
+
+}
+
+
+
+div#block-user-login input[type="text"]{
+
+background:#E9F4D9;
+
+border:solid 1px #D5DDC8;
+
+width:242px;
+
+height:32px;
+
+padding:3px 0 0 10px;
+
+}
+
+
+
+div#block-user-login input[type="password"]{
+
+background:#E9F4D9;
+
+border:solid 1px #D5DDC8;
+
+width:242px;
+
+height:32px;
+
+padding:3px 0 0 10px;
+
+}
+
+
+
+div#block-user-login input[type="submit"]{
+
+background:#0178A2;
+
+border-radius:3px;
+
+-webkit-border-radius:3px;
+
+border:none;
+
+cursor:pointer;
+
+font:bold 16px/18px Arial, Helvetica, sans-serif;
+
+padding:5px 10px;
+
+margin:10px 0 0 0;
+
+color:#fff;
+
+}
+
+
+
+div#block-user-login label{
+
+padding:0 0 10px 0;
+
+display:block;
+
+}
+
+
+
+div#block-user-login div.item-list{
+
+display:none;
+
+}
+
+
+
+.form-item{
+
+margin:0;
+
+}
+
+
+
+.form-item, .form-actions {
+
+margin:0;
+
+}
+
+
+
+div.resource{
+
+padding-bottom:40px;
+
+}
+
+
+
+div.resourcesec{
+
+padding-bottom:18px;
+
+height:100%;
+
+overflow:hidden;
+
+color:#323027;
+
+font-size:12px;
+
+line-height:16px;
+
+}
+
+
+
+div.resourcesec img{
+
+float:left;
+
+margin:0 15px 0 0;
+
+}
+
+
+
+div#footerfull{
+
+background:url(images/footerbg.jpg) repeat-x 0 0;
+
+}
+
+
+
+div.footerwarper{
+
+max-width:960px;
+
+margin:0 auto;
+
+}
+
+div.footerwarper a{
+
+	color:#fff;	
+
+}
+
+div.footerwarper a:hover{
+
+	text-decoration:underline;	
+
+}
+
+
+
+div.footertop{
+
+padding:21px 0 34px 363px;
+
+background:url(images/footer-logo.png) no-repeat 48px 35px;
+
+height:100%;
+
+overflow:hidden;
+
+}
+
+
+
+div.footertop h2{
+
+font-weight:normal;
+
+font-family:Arial, Helvetica, sans-serif;
+
+color:#FFFFFF;
+
+padding-bottom:8px;
+
+margin:0;
+
+}
+
+
+
+div.footertop p{
+
+font-weight:normal;
+
+font-family:Arial, Helvetica, sans-serif;
+
+color:#EFEDDE;
+
+padding-bottom:20px;
+
+margin:0;
+
+}
+
+ 
+
+
+
+div.footernav{
+
+width:220px;
+
+float:left;
+
+}
+
+
+
+div.footcontact{
+
+width:375px;
+
+float:left;
+
+}
+
+
+
+div.footernav ul{
+
+padding:0;
+
+margin:0;
+
+}
+
+
+
+div.footernav li{
+
+font-family:Arial, Helvetica, sans-serif;
+
+color:#EFEDDE;
+
+display:block;
+
+}
+
+
+
+div.footernav li a{
+
+color:#EFEDDE;
+
+text-decoration:none;
+
+}
+
+
+
+div.footernav li a:hover{
+
+text-decoration:underline;
+
+}
+
+
+
+
+
+div.copyright{
+
+color:#9DB26E;
+
+text-align:center;
+
+font-weight:normal;
+
+font-family:Arial, Helvetica, sans-serif;
+
+}
+
+
+
+.region-bottom{
+
+width:auto;
+
+}
+
+
+
+.region-sidebar-second {
+
+float:none;
+
+margin:0;
+
+width:100%;
+
+}
+
+
+
+.region-sidebar-second .section{
+
+margin:0;
+
+}
+
+
+
+
+
+.mapPan{
+
+	width:605px;
+
+	position:relative;
+
+	margin-bottom:25px;
+
+}
+
+.regionPan{
+
+	display:none;
+
+	width:219px;
+
+	height:177px;
+
+	background:url(images/map-leaf.png) 0 0 no-repeat;
+
+	padding:32px 90px 0 115px;
+
+	position:absolute;
+
+	top:38px;
+
+	right:0;
+
+	text-align:center;
+
+}
+
+.regionPan h4{
+
+	font-weight:normal;
+
+	font-family:"Times New Roman", Times, serif;
+
+	color:#000 !important;
+
+	padding:0 0 5px !important;
+
+	margin:0;
+
+}
+
+div#contentarea .regionPan p{
+
+	color:#000;
+
+	padding:0;
+
+}
+
+
+
+div#contentarea #region3 p{
+
+	color:#fff;
+
+}
+
+
+
+div#contentarea #region3  h4{
+
+	color:#fff !important;
+
+}
+
+
+
+ul.nice-menu li {
+
+border:none;
+
+background:none !important;
+
+}
+
+
+
+ul.nice-menu-down li.menuparent {
+
+background:none !important;
+
+}
+
+
+
+ul.nice-menu-down li.menuparent:hover {
+
+    background:none !important;
+
+}
+
+ul.nice-menu-down li li.menuparent {
+
+    background:none !important;
+
+}
+
+ul.nice-menu-down li li.menuparent:hover {
+
+    background:#000 !important;
+
+}
+
+
+
+#header-region ul.nice-menu-down li.menuparent {
+
+    background:none !important;
+
+}
+
+#header-region ul.nice-menu-down li.menuparent:hover {
+
+    background:#000 !important;
+
+}
+
+#header-region ul.nice-menu-down li li.menuparent {
+
+    background:#001824 !important;
+
+}
+
+#header-region ul.nice-menu-down li li.menuparent:hover {
+
+    background:#000 !important;
+
+}
+
+
+
+ul.nice-menu ul {
+
+    background:#001824;
+
+	border:none;
+
+	top: 46px;
+
+	}
+
+	
+
+ul.nice-menu ul li {
+
+width:300px;
+
+}
+
+
+
+ul.nice-menu ul li a{
+
+font:normal 15px/33px Arial, Helvetica, sans-serif;
+
+	}
+
+	
+
+.not-front div.logoportion{
+
+width:100%;
+
+overflow:hidden;
+
+padding-bottom: 36px;
+
+}
+
+	
+
+.not-front div.logo{
+
+width:500px;
+
+float:left;
+
+}
+
+
+
+.not-front div.logo img{
+
+width:100%;
+
+}
+
+
+
+
+
+.not-front div.findbutton{
+
+padding:66px 0 0 0;
+
+float:right;
+
+}
+
+
+
+.not-front img.joinnow{
+
+padding: 0 0 0 202px !important;
+
+}
+
+
+
+
+
+#region1{
+
+background:url(images/map-leaf1.png) 0 0 no-repeat;
+
+}
+
+#region2{
+
+background:url(images/map-leaf2.png) 0 0 no-repeat;
+
+}
+
+#region3{
+
+background:url(images/map-leaf3.png) 0 0 no-repeat;
+
+display:block !important;
+
+}
+
+#region4{
+
+	background:url(images/map-leaf4.png) 0 0 no-repeat;
+
+	height:187px;
+
+	padding:22px 90px 0 115px;
+
+}
+
+
+
+
+
+div#contentarea h3 a{
+
+	font-weight:bold;
+
+	font-family:"Times New Roman", Times, serif;
+
+	text-decoration:none;
+
+}
+
+
+
+.form_field_membertype .form-item-membertype{
+
+	padding-bottom:5px;	
+
+}
+
+.form_field_membertype .form-item-membertype input[type="radio"]{
+
+	margin-right:5px;
+
+	margin-top:-2px;
+
+}
+
+.form_field_membertype  .description{
+
+	padding:7px 0 10px;
+
+}
+
+
+
+.page-choose-membership-type .buttonsection{
+
+	display:none;
+
+}
+
+
+
+.listStyle{
+
+	margin:0;
+
+	padding:0 0 20px 0;
+
+}
+
+.listStyle li{
+
+	background:url(images/tick.png) 0 2px no-repeat;
+
+	padding:0 0 5px 22px;
+
+}
+
+/*.listStyle li a{
+
+	text-decoration:none !important;
+
+}*/
+
+.listStyle li ul{
+
+	padding-left:0;
+
+	padding-top:8px;
+
+	list-style-type:none;
+
+}
+
+
+
+
+
+.page-user-register label{
+
+	float:left;
+
+	width:255px !important;
+
+	line-height:30px;
+
+	margin-bottom:10px;
+
+}
+
+.page-user-register input[type="text"]{
+
+	border:solid 1px #D5DDC8;
+
+	width:350px;
+
+	height:30px;
+
+	padding:3px;
+
+	margin-bottom:10px;
+
+}
+
+.page-user-register input[type="file"]{
+
+	border:solid 1px #D5DDC8;
+
+	width:237px;
+
+	height:30px;
+
+	padding:3px;
+
+	margin-bottom:10px;
+
+	margin-right:10px;
+
+}
+
+.page-user-register .grippie{
+
+	display:none;	
+
+}
+
+.page-user-register textarea{
+
+	border:solid 1px #D5DDC8;
+
+	width:357px;
+
+	height:100px;
+
+	padding:3px;
+
+	margin-bottom:10px;	
+
+	font-size:14px;
+
+	line-height:16px;
+
+	font-family:Arial, Helvetica, sans-serif;
+
+}
+
+.page-user-register .description{
+
+	margin-left:255px !important;
+
+	width:355px;
+
+	padding-bottom:10px;
+
+	line-height:16px;
+
+}
+
+.page-user-register input[type="submit"]{
+
+	background:#0178A2;
+
+	border-radius:3px;
+
+	-webkit-border-radius:3px;
+
+	border:none;
+
+	cursor:pointer;
+
+	font:bold 16px/18px Arial, Helvetica, sans-serif;
+
+	padding:5px 10px;
+
+	margin:10px 0 0 255px !important;
+
+	color:#fff;
+
+}
+
+.page-user-register #edit-field-upload-logo-und-0-upload-button{
+
+	margin-left:0 !important;	
+
+}
+
+.page-user-register .buttonsection{
+
+	display:none;	
+
+}
+
+
+
+.custom_business #edit-field-first-name, 
+
+.custom_business #edit-field-last-name, 
+
+.custom_business #edit-field-contact-name, 
+
+.custom_business #edit-field-2nd-email, 
+
+.custom_business #edit-field-3rd-email, 
+
+.custom_business #edit-field-counties-served, 
+
+.custom_business #edit-field-description-of-services, 
+
+.custom_business #edit-field-payment-opt-paypal-invoice,
+
+.custom_business #edit-field-other-branches{
+
+	display:none;	
+
+}
+
+
+
+.custom_business #edit-field-not-display-mem-directory{
+
+	height:100%;
+
+	overflow:hidden;
+
+	margin-left:255px;
+
+}
+
+.custom_business #edit-field-not-display-mem-directory label{
+
+	display:none;	
+
+}
+
+.custom_business #edit-field-not-display-mem-directory #edit-field-not-display-mem-directory-und label{
+
+	display:block;	
+
+}
+
+.custom_business #edit-field-not-display-mem-directory input{
+
+	float:left;
+
+	margin: 8px 10px 0 0;
+
+}
+
+.custom_business #edit-field-not-display-mem-directory label{
+
+	float:left;	
+
+}
+
+
+
+
+
+.custom_individual #edit-field-organization-name, 
+
+.custom_individual #edit-field-contact-name, 
+
+.custom_individual #edit-field-2nd-email, 
+
+.custom_individual #edit-field-3rd-email, 
+
+.custom_individual #edit-field-type-of-business, 
+
+.custom_individual #edit-field-counties-served, 
+
+.custom_individual #edit-field-description-of-services, 
+
+.custom_individual #edit-field-upload-logo, 
+
+.custom_individual #edit-field-primary-contact-name, 
+
+.custom_individual #edit-field-payment-opt-paypal-invoice,
+
+.custom_individual #edit-field-website-url,
+
+.custom_individual #edit-field-mission-statement,
+
+.custom_individual #edit-field-other-branches,
+
+.custom_individual #edit-field-payment-option .form-type-radios #edit-field-payment-option-und .form-item-field-payment-option-und #edit-field-payment-option-und-0-{
+
+	display:none;	
+
+}
+
+
+
+.custom_individual #edit-field-not-display-mem-directory{
+
+	height:100%;
+
+	overflow:hidden;
+
+	margin-left:255px;
+
+}
+
+.custom_individual #edit-field-not-display-mem-directory label{
+
+	display:none;	
+
+}
+
+.custom_individual #edit-field-not-display-mem-directory #edit-field-not-display-mem-directory-und label{
+
+	display:block;	
+
+}
+
+.custom_individual #edit-field-not-display-mem-directory input{
+
+	float:left;
+
+	margin: 8px 10px 0 0;
+
+}
+
+.custom_individual #edit-field-not-display-mem-directory label{
+
+	float:left;	
+
+}
+
+
+
+
+
+.custom_hospice #edit-field-first-name, 
+
+.custom_hospice #edit-field-last-name,  
+
+.custom_hospice #edit-field-contact-name, 
+
+.custom_hospice #edit-field-mission-statement, 
+
+.custom_hospice #edit-field-type-of-business, 
+
+.custom_hospice #edit-field-payment-opt-paypal-invoice{
+
+	display:none;
+
+}
+
+.custom_hospice #edit-field-not-display-mem-directory{
+
+	height:100%;
+
+	overflow:hidden;
+
+	margin-left:255px;
+
+}
+
+.custom_hospice #edit-field-not-display-mem-directory label{
+
+	display:none;	
+
+}
+
+.custom_hospice #edit-field-not-display-mem-directory #edit-field-not-display-mem-directory-und label{
+
+	display:block;	
+
+}
+
+.custom_hospice #edit-field-not-display-mem-directory input{
+
+	float:left;
+
+	margin: 8px 10px 0 0;
+
+}
+
+.custom_hospice #edit-field-not-display-mem-directory label{
+
+	float:left;	
+
+}
+
+
+
+.custom_hospice .form-type-hierarchical-select select{
+
+	border:solid 1px #D5DDC8;
+
+	width:250px;
+
+	height:30px;
+
+	padding:3px;
+
+	margin-bottom:5px;	
+
+}
+
+.custom_hospice .form-type-hierarchical-select input[type="submit"]{
+
+	margin:0 0 0 10px !important;	
+
+}
+
+.custom_hospice .form-type-hierarchical-select .dropbox{
+
+	margin-left:255px;
+
+	margin-top:5px;
+
+}
+
+.custom_hospice .form-type-hierarchical-select .dropbox .dropbox-title{
+
+	color:#5F5F5F;
+
+	text-align:left;
+
+	padding-bottom:5px;
+
+}
+
+.custom_hospice .form-type-hierarchical-select .dropbox tr{
+
+	border:solid 1px #D5DDC8;
+
+}
+
+.custom_hospice .form-type-hierarchical-select .dropbox td{
+
+	padding:3px 5px;
+
+}
+
+.custom_hospice .form-type-hierarchical-select .dropbox td.dropbox-remove{
+
+	text-align:right;	
+
+}
+
+.custom_hospice .form-type-hierarchical-select .dropbox .dropbox-selected-item{
+
+	font-weight:normal;
+
+	color:#000;
+
+}
+
+.custom_hospice .form-type-hierarchical-select .dropbox td.dropbox-remove a{
+
+	font-weight:normal !important;
+
+	font-size:12px !important;
+
+	text-decoration:none !important;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.breadcrumb{
+
+	padding-bottom:15px;	
+
+}
+
+
+
+.page-user #edit-pricing .form-item-pricing{
+
+	width:450px;
+
+}
+
+.page-user .form-type-password{
+
+	width:100%;
+
+	clear:both;
+
+}
+
+.page-user .password-suggestions{
+
+	width:343px !important;
+
+	padding:2px !important;
+
+	margin:0 0 0 255px !important;
+
+}
+
+.page-user .password-suggestions ul{
+
+	padding-top:2px;	
+
+}
+
+.page-user label{
+
+	float:left;
+
+	line-height:30px;
+
+	margin-bottom:10px;
+
+	width:120px;
+
+}
+
+.page-user input[type="text"], 
+
+.page-user input[type="password"]{
+
+	border:solid 1px #D5DDC8;
+
+	width:350px;
+
+	height:30px;
+
+	padding:3px;
+
+	margin-bottom:10px;
+
+}
+
+.page-user .description{
+
+	margin-left:120px;
+
+	width:355px;
+
+	padding-bottom:10px;
+
+	line-height:16px;
+
+}
+
+.page-user input[type="submit"]{
+
+	background:#0178A2;
+
+	border-radius:3px;
+
+	-webkit-border-radius:3px;
+
+	border:none;
+
+	cursor:pointer;
+
+	font:bold 16px/18px Arial, Helvetica, sans-serif;
+
+	padding:5px 10px;
+
+	margin:10px 0 0 120px;
+
+	color:#fff;
+
+}
+
+
+
+
+
+.page-user-edit label{
+
+	float:left;
+
+	width:255px;
+
+	line-height:30px;
+
+	margin-bottom:10px;
+
+}
+
+.page-user-edit input[type="text"], 
+
+.page-user-edit input[type="password"]{
+
+	border:solid 1px #D5DDC8;
+
+	width:350px;
+
+	height:30px;
+
+	padding:3px;
+
+	margin-bottom:10px;
+
+}
+
+.page-user-edit select{
+
+	border:solid 1px #D5DDC8;
+
+	width:610px;
+
+	height:30px;
+
+	padding:3px;
+
+	margin-bottom:10px;
+
+}
+
+.page-user-edit input[type="file"]{
+
+	border:solid 1px #D5DDC8;
+
+	width:237px;
+
+	height:30px;
+
+	padding:3px;
+
+	margin-bottom:10px;
+
+	margin-right:10px;
+
+}
+
+.page-user-edit .grippie{
+
+	display:none;	
+
+}
+
+.page-user-edit textarea{
+
+	border:solid 1px #D5DDC8;
+
+	width:357px;
+
+	height:100px;
+
+	padding:3px;
+
+	margin-bottom:10px;	
+
+	font-size:14px;
+
+	line-height:16px;
+
+	font-family:Arial, Helvetica, sans-serif;
+
+}
+
+.page-user-edit .form-type-password{
+
+	position:relative;
+
+	width:100%;
+
+}
+
+.page-user-edit .password-strength{
+
+	position:absolute;
+
+	top:5px;
+
+	left:632px;
+
+	margin-top:0;
+
+	float:none;
+
+}
+
+.page-user-edit div.password-confirm{
+
+	position:absolute;
+
+	top:5px;
+
+	left:632px;
+
+	margin-top:0;
+
+	float:none;	
+
+}
+
+.page-user-edit fieldset{
+
+	border:0;
+
+	padding:0;
+
+	margin:0;
+
+}
+
+.page-user-edit fieldset legend{
+
+	display:none;	
+
+}
+
+.page-user-edit .description{
+
+	margin-left:255px;
+
+	width:610px;
+
+	padding-bottom:10px;
+
+	line-height:16px;
+
+}
+
+.page-user-edit .password-suggestions{
+
+	margin:0 0 10px 255px !important;
+
+}
+
+.page-user-edit input[type="submit"]{
+
+	background:#0178A2;
+
+	border-radius:3px;
+
+	-webkit-border-radius:3px;
+
+	border:none;
+
+	cursor:pointer;
+
+	font:bold 16px/18px Arial, Helvetica, sans-serif;
+
+	padding:5px 10px;
+
+	margin:10px 0 0 255px;
+
+	color:#fff;
+
+}
+
+.page-user-edit #edit-field-upload-logo-und-0-remove-button,
+
+.page-user-edit #edit-field-upload-logo-und-0-upload-button{
+
+	margin-left:0;	
+
+}
+
+.custom_business_edit_form #edit-picture, 
+
+.custom_business_edit_form #edit-field-first-name, 
+
+.custom_business_edit_form #edit-field-last-name, 
+
+.custom_business_edit_form #edit-field-contact-name, 
+
+.custom_business_edit_form #edit-field-2nd-email, 
+
+.custom_business_edit_form #edit-field-3rd-email, 
+
+.custom_business_edit_form #edit-field-counties-served, 
+
+.custom_business_edit_form #edit-field-description-of-services,
+
+.custom_business_edit_form #edit-field-other-branches{
+
+	display:none;
+
+}
+
+
+
+.custom_individual_edit_form #edit-picture, 
+
+.custom_individual_edit_form #edit-field-organization-name, 
+
+.custom_individual_edit_form #edit-field-contact-name, 
+
+.custom_individual_edit_form #edit-field-2nd-email, 
+
+.custom_individual_edit_form #edit-field-3rd-email, 
+
+.custom_individual_edit_form #edit-field-type-of-business, 
+
+.custom_individual_edit_form #edit-field-counties-served, 
+
+.custom_individual_edit_form #edit-field-description-of-services, 
+
+.custom_individual_edit_form #edit-field-upload-logo,
+
+.custom_individual_edit_form #edit-field-website-url,
+
+.custom_individual_edit_form #edit-field-mission-statement,
+
+.custom_individual_edit_form #edit-field-other-branches,
+
+.custom_individual_edit_form #edit-field-payment-option .form-type-radios #edit-field-payment-option-und .form-item-field-payment-option-und #edit-field-payment-option-und-0-{
+
+	display:none;	
+
+}
+
+
+
+.custom_hospice_edit_form #edit-picture,
+
+.custom_hospice_edit_form #edit-field-first-name,  
+
+.custom_hospice_edit_form #edit-field-last-name,  
+
+.custom_hospice_edit_form #edit-field-phone, 
+
+.custom_hospice_edit_form #edit-field-primary-contact-name, 
+
+.custom_hospice_edit_form #edit-field-mission-statement, 
+
+.custom_hospice_edit_form #edit-field-type-of-business,
+
+.custom_hospice_edit_form #edit-field-payment-opt-paypal-invoice{
+
+	display:none;
+
+}
+
+
+
+
+
+.section-choose-membership-type .intro{
+
+	padding-top:0;	
+
+}
+
+
+
+
+
+div.hotspicsection{
+
+height:100%;
+
+overflow:hidden;
+
+border-bottom:solid 1px #CACACA;
+
+padding-bottom:20px;
+
+margin-bottom:20px;
+
+}
+
+
+
+
+
+div.hotspicimage{
+
+float:left;
+
+width:244px;
+
+}
+
+
+
+
+
+div.hotspicdes{
+
+float:left;
+
+width:370px;
+
+}
+
+
+
+
+
+div.hotspicsection ul.listStyle {
+
+padding-bottom:7px;
+
+margin:0;
+
+}
+
+
+
+div.hotspicsection p{
+
+padding-bottom:7px;
+
+margin:0;
+
+}
+
+
+
+div.hotspicsection p.hotsbutton{
+
+padding:0;
+
+margin:0;
+
+}
+
+
+
+div.hotspicsection p.hotsbutton a{
+
+background:#43882D !important;
+
+color:#fff !important;
+
+font:bold 14px/30px Arial, Helvetica, sans-serif !important;
+
+text-decoration:none !important;
+
+padding:0 8px;
+
+display:block;
+
+float:left;
+
+width:auto;
+
+-moz-border-radius:5px;
+
+border-radius:5px;
+
+}
+
+
+
+div.hotspicsection p.hotsbutton a:hover{
+
+background:#000 !important;
+
+color:#fff !important;
+
+}
+
+
+
+div.node-jobs div.field{
+
+display:inline;
+
+}
+
+
+
+
+
+
+
+div.node-jobs div.field-items{
+
+display:inline;
+
+}
+
+
+
+div.node-jobs div.field-item{
+
+display:inline;
+
+}
+
+
+
+
+
+ul.breadcrumbs{
+
+padding:20px 0;
+
+}
+
+
+
+ul.breadcrumbs li{
+
+display:inline;
+
+padding:0;
+
+}
+
+
+
+
+
+.board{
+
+	border-bottom:solid 1px #e7e7e7;
+
+	padding-bottom:10px;
+
+	margin-bottom:15px;
+
+}
+
+.board strong{
+
+	display:block;	
+
+}
+
+.board a{
+
+	display:inline-block;
+
+	font-weight:normal !important;
+
+}
+
+.dreamImg{
+
+	border-bottom:solid 1px #e7e7e7;
+
+	margin-bottom:10px;
+
+}
+
+.dreamImg img, 
+
+.imgCont{
+
+	padding:2px;
+
+	border:solid 1px #cacaca;
+
+	display:block;
+
+	margin:0 auto 10px;
+
+}
+
+.dreamImg p{
+
+	font-weight:bold !important;
+
+	text-align:center;
+
+}
+
+.dreamImg p.note{
+
+	font-style:italic !important;
+
+	font-size:12px !important;
+
+	line-height:14px !important;
+
+}
+
+.leftImg{
+
+	float:left;
+
+	margin-right:20px;
+
+	margin-bottom:10px;
+
+}
+
+.thanksPan{
+
+	border-top:solid 1px #e7e7e7;
+
+	padding-top:20px;
+
+	margin-top:10px;
+
+}
+
+.thanksPan p{
+
+	font-size:12px !important;
+
+	line-height:14px !important;
+
+	padding-bottom:10px !important;
+
+}
+
+.thanksPan p b{
+
+	display:inline-block;
+
+	padding-bottom:5px;
+
+}
+
+
+
+
+
+.view-memorial .views-row{
+
+    border-bottom: 1px solid #E7E7E7;
+
+    margin-bottom: 20px;
+
+    padding-bottom: 20px;
+
+	height:100%;
+
+	overflow:hidden;
+
+}
+
+.view-memorial .views-row-last{
+
+    border-bottom:0;
+
+    margin-bottom: 0;
+
+    padding-bottom: 0;	
+
+}
+
+.view-memorial .views-field-title{
+
+    color: #2C76A7;
+
+	font-weight:bold;
+
+	font-family:"Times New Roman", Times, serif;
+
+    margin: 0;
+
+    padding-bottom: 12px;	
+
+}
+
+.view-memorial .views-field-field-memorial-image{
+
+	float:left;
+
+	margin-right:20px;
+
+	width:225px;
+
+}
+
+.view-memorial .views-field-field-memorial-description{
+
+	float:left;
+
+	width:700px;
+
+}
+
+
+
+div.view-hospice-user-profiles div.view-empty{
+
+text-align:center;
+
+color: #2C76A7;
+
+margin: 0;
+
+padding:20px 0;
+
+font-weight:bold;
+
+font-family:"Times New Roman", Times, serif;
+
+}
+
+
+
+#edit-field-counties-served-tid{
+
+width:200px;
+
+}
+
+
+
+div.view-hospice-user-profiles div.view-filters{
+
+width:200px;
+
+float:left;
+
+}
+
+
+
+div.view-hospice-user-profiles div.description{
+
+font-size:12px;
+
+}
+
+
+
+
+
+
+
+div.view-hospice-user-profiles div.view-content{
+
+width:723px;
+
+float:right;
+
+}
+
+
+
+
+
+div.view-hospice-user-profiles div.hotspicdes {
+
+    float: right;
+
+    width: 473px;
+
+	}
+
+	
+
+
+
+#edit-submit-hospice-user-profiles{
+
+    background: #43882D !important;
+
+    border-radius: 5px;
+
+    color: #FFFFFF !important;
+
+    font: bold 14px/30px Arial,Helvetica,sans-serif !important;
+
+    padding:4px 8px;
+
+    text-decoration: none !important;
+
+    width: auto;
+
+	border:none;
+
+	cursor:pointer;
+
+}
+
+
+
+
+
+form#user-register-form div.form-item-pricing label{
+
+float:none !important;
+
+}
+
+
+
+form#user-register-form div.field-name-field-payment-option label{
+
+float:none;
+
+}
+
+
+
+form#user-register-form div.form-item-Pricing label{
+
+float:none !important;
+
+}
+
+
+
+.page-user-register-hospice #custom_pricing_hospice{
+
+	height:100%;
+
+	overflow:hidden;
+
+	padding-bottom:15px;
+
+}
+
+.page-user-register-hospice form#user-register-form #custom_pricing_hospice div.form-item-pricing label{
+
+	float:left !important;	
+
+}
+
+.page-user-register-hospice #custom_pricing_hospice #edit-pricing{
+
+	float:left;
+
+	width:400px;
+
+}
+
+.page-user-register-hospice form#user-register-form #custom_pricing_hospice div.form-item-pricing #edit-pricing label{
+
+	float:none !important;	
+
+}
+
+
+
+.page-user-register-hospice #edit-field-payment-option{
+
+	height:100%;
+
+	overflow:hidden;
+
+}
+
+.page-user-register-hospice #edit-field-payment-option label{
+
+	float:left !important;	
+
+}
+
+.page-user-register-hospice #edit-field-payment-option #edit-field-payment-option-und{
+
+	float:left;
+
+	width:400px;
+
+}
+
+.page-user-register-hospice #edit-field-payment-option #edit-field-payment-option-und label{
+
+	float:none !important;	
+
+}
+
+
+
+
+
+.page-user-register-business #custom_pricing_business{
+
+	height:100%;
+
+	overflow:hidden;
+
+	padding-bottom:15px;
+
+}
+
+.page-user-register-business form#user-register-form #custom_pricing_business div.form-item-Pricing label{
+
+	float:left !important;	
+
+}
+
+.page-user-register-business #custom_pricing_business #edit-pricing{
+
+	float:left;
+
+	width:400px;
+
+}
+
+.page-user-register-business form#user-register-form #custom_pricing_business div.form-item-Pricing #edit-pricing label{
+
+	float:none !important;	
+
+}
+
+
+
+.page-user-register-business #edit-field-payment-option{
+
+	height:100%;
+
+	overflow:hidden;
+
+}
+
+.page-user-register-business #edit-field-payment-option label{
+
+	float:left !important;	
+
+}
+
+.page-user-register-business #edit-field-payment-option #edit-field-payment-option-und{
+
+	float:left;
+
+	width:400px;
+
+}
+
+.page-user-register-business #edit-field-payment-option #edit-field-payment-option-und label{
+
+	float:none !important;	
+
+}
+
+
+
+
+
+.page-user-register-individual #custom_pricing_individual{
+
+	height:100%;
+
+	overflow:hidden;
+
+	padding-bottom:15px;
+
+}
+
+.page-user-register-individual form#user-register-form #custom_pricing_individual div.form-item-Pricing label{
+
+	float:left !important;	
+
+}
+
+.page-user-register-individual #custom_pricing_individual #edit-pricing{
+
+	float:left;
+
+	width:400px;
+
+}
+
+.page-user-register-individual form#user-register-form #custom_pricing_individual div.form-item-Pricing #edit-pricing label{
+
+	float:none !important;	
+
+}
+
+
+
+.page-user-register-individual #edit-field-payment-option{
+
+	height:100%;
+
+	overflow:hidden;
+
+}
+
+.page-user-register-individual #edit-field-payment-option label{
+
+	float:left !important;	
+
+}
+
+.page-user-register-individual #edit-field-payment-option #edit-field-payment-option-und{
+
+	float:left;
+
+	width:400px;
+
+}
+
+.page-user-register-individual #edit-field-payment-option #edit-field-payment-option-und label{
+
+	float:none !important;	
+
+}
+
+
+
+.thankyouText{
+
+	font-size:16px !important;
+
+	line-height:20px !important;
+
+}
+
+.thankyouText span{
+
+	font-weight:bold !important;
+
+	font-style:italic !important;
+
+	color:#2C76A7;
+
+}
+
+.total_cont{
+
+	height:100%;
+
+	overflow:hidden;
+
+}
+
+.total_cont .label{
+
+	display:block;
+
+    line-height: 30px;
+
+    margin-bottom: 10px;
+
+   width: 255px !important;
+
+   font-weight: bold;
+
+   float:left;
+
+}
+
+.total_cont .total_val{
+
+	float:left;	
+
+   font-weight: bold;
+
+}
+
+.total_cont .total_val strong{
+
+	margin-right:5px;	
+
+}
+
+.total_cont .total_val em{
+
+	font-style:normal;	
+
+}
+
+
+
+/** New CSS for Registration page **/
+
+.page-user-register #custom_pricing_individual div.form-item-pricing label[for=edit-pricing],
+
+.page-user-register #custom_pricing_business div.form-item-pricing label[for=edit-pricing] {
+
+	float:left !important;
+
+}
+
+
+
+img.secondblock{
+
+padding:0 50px 0 0 !important;
+
+}
+
+
+
+div#block-block-10{
+
+margin-bottom:20px;
+
+}
+
+
+
+div#charLeft{
+
+padding-left:255px;
+
+}
+
+
+
+div.hotspicimage2{
+
+width:200px;
+
+float:left;
+
+}
+
+
+
+
+
+div.view-partnersfull-view div.hotspicimage img{
+
+padding-bottom:10px;
+
+}
+
+
+
+div.view-partnersfull-view div.hotspicdes{
+
+float:none;
+
+width:auto;
+
+}
+
+
+
+div.newsticker-jcarousellite li{
+
+border-top:dashed 1px #939074;
+
+}
+
+
+
+div#node-52 ul.listStyle li{
+
+	background:none;
+
+	padding:0;
+
+}
+
+
+
+div#node-52 ul.listStyle li a{
+
+	text-decoration:none !important;
+
+	background:url(images/tick2.png) 0 1px no-repeat;
+
+	padding:0 0 5px 19px;
+
+}
+
+
+
+div#block-block-7{
+
+margin-top:20px;
+
+}
+
+.listStyle p{
+
+	padding-left: 2em;
+
+}
+
+
+
+/* Font Sizer Style */
+
+.link_container{
+
+	height:15px;
+
+	position:relative;
+
+	width:35px;
+
+}
+
+.front .link_container{
+
+	top:-25px;
+
+	right:-225px;	
+
+}
+
+.not-front .link_container{
+
+	float:right;	
+
+}
+
+.link_container div.link_cont a{
+
+	width:15px;
+
+	height:15px;
+
+	background-color:#488e2e;
+
+	font-size:12px;
+
+	line-height:15px;
+
+	color:#fff;
+
+	text-align:center;
+
+	float:left;
+
+	margin:0 1px;
+
+	cursor:pointer;
+
+}
+
+.link_container div.link_cont a{
+
+	text-decoration:none !important;
+
+	color:#fff !important;
+
+	display:block;
+
+	float:left;
+
+}
+
+.link_container div.link_cont2{
+
+	font-size:15px;
+
+}
+
+.link_container div.link_cont.active a{
+
+	background-color:#0f4008;
+
+	color:#abd593 !important;
+
+}
+
+
+
+img#logo-image{
+
+width:530px;
+
+height:auto;
+
+}
+
+
+
+div.view-video-view td{
+
+padding:10px;
+
+}
+
+
+
+.findHBtn{
+
+	margin:0 auto;
+
+	display:block;
+
+	border:0;
+
+	padding:0;
+
+	float:none !important;
+
+}
+
+
+
+#user-profile-form .hierarchical-select-wrapper .dropbox {
+
+    margin: 0 0 20px 255px;
+
+}
+
+#user-profile-form .hierarchical-select-wrapper .dropbox td{
+
+	padding:2px;	
+
+}
+
+#user-profile-form #edit-field-not-display-mem-directory-und{
+
+	float:left;	
+
+}
+
+#user-profile-form #edit-field-not-display-mem-directory-und input[type="checkbox"]{
+
+	float:left;
+
+	margin:9px 10px 0 0;
+
+}
+
+#user-profile-form #edit-field-membership-pricing-tag{
+
+	clear:both;	
+
+}
+
+#user-profile-form #edit-field-payment-option-und{
+
+	float:left;	
+
+}
+
+#user-profile-form #edit-field-payment-option-und input[type="radio"]{
+
+	float:left;
+
+	margin:9px 10px 0 0;
+
+}
+
+#user-profile-form #edit-field-payment-option-und label{
+
+	width:150px;
+
+	margin-bottom:0;
+
+}
+
+#user-profile-form #field-pricing-add-more-wrapper{
+
+	clear:both;	
+
+	padding-top:15px;
+
+}
+
+
+
+#rightpanel #block-user-login{
+
+	padding-top:20px;	
+
+}
+
+
+
+#user-pass label{
+
+	width:240px;	
+
+}
+
+#user-pass input[type="submit"]{
+
+	margin-left:240px;	
+
+}
+
+
+
+/* Contact Page Style */
+
+
+
+#webform-client-form-9 label {
+
+    float: left;
+
+    line-height: 30px;
+
+    margin-bottom: 10px;
+
+    width: 120px;
+
+}
+
+#webform-client-form-9 input[type="text"], #webform-client-form-9 input[type="email"]{
+
+    border: 1px solid #D5DDC8;
+
+    height: 30px;
+
+    margin-bottom: 10px;
+
+    padding: 3px;
+
+    width: 350px;
+
+}
+
+#webform-client-form-9 textarea{
+
+    border: 1px solid #D5DDC8;
+
+    height: 70px;
+
+    margin-bottom: 10px;
+
+    padding: 3px;
+
+    width: 358px;	 
+
+ }
+
+#webform-client-form-9 input[type="submit"] {
+
+    background: none repeat scroll 0 0 #0178A2;
+
+    border: medium none;
+
+    border-radius: 3px 3px 3px 3px;
+
+    color: #FFFFFF;
+
+    cursor: pointer;
+
+    font: bold 16px/18px Arial,Helvetica,sans-serif;
+
+    margin: 10px 0 0 120px;
+
+    padding: 5px 10px;
+
+}
+
+#webform-client-form-9 .grippie{
+
+	display:none;	
+
+}
+
+
+
+.page-add-memorial .intro{
+
+	position:relative;
+
+}
+
+.page-add-memorial #block-block-18{
+
+	position:absolute;
+
+	top:66px;
+
+	left:534px;
+
+}
+
+
+
+/**** New CSS ***/
+
+.not-logged-in .view-newsfull-view .views-row .newslist .title_link,
+
+.logged-in .view-newsfull-view .views-row .newslist .title_no_link,
+
+.not-logged-in .view-newsfull-view .views-row .newslist .read_more {
+
+	display:none;
+
+}
+
+
+
+.not-logged-in .view-newsfull-view .views-row .newslist .title_no_link {
+
+	color: #2C76A7;
+
+	font-weight: bold;
+
+	text-decoration: underline;
+
+}
+
+
+
+div#block-system-navigation{
+
+padding-bottom:20px;
+
+}
+
+
+
+ul.rightlinks{
+
+padding:0;
+
+margin:0;
+
+}
+
+
+
+ul.rightlinks li{
+
+list-style-type:none;
+
+padding:0;
+
+margin:0;
+
+}
+
+
+
+ul.rightlinks li a{
+
+display:block;
+
+width:254px;
+
+height:33px;
+
+text-indent:-9999px;
+
+}
+
+
+
+ul.rightlinks li.brochures a{
+
+background:url(images/brochures.png) no-repeat 0 0;
+
+}
+
+
+
+ul.rightlinks li.brochures a:hover{
+
+background:url(images/brochures-hover.png) no-repeat 0 0;
+
+}
+
+
+
+
+
+ul.rightlinks li.videos a{
+
+background:url(images/video.png) no-repeat 0 0;
+
+}
+
+
+
+ul.rightlinks li.videos a:hover{
+
+background:url(images/video-hover.png) no-repeat 0 0;
+
+}
+
+
+
+
+
+ul.rightlinks li.donate input[type="submit"]{
+
+background:url(images/donate.png) no-repeat 0 0;
+
+text-indent:-9999px;
+
+width:254px;
+
+height:33px;
+
+cursor:pointer;
+
+border:none;
+
+}
+
+
+
+
+
+ul.rightlinks li.donate input[type="submit"]:hover{
+
+background:url(images/donate-hover.png) no-repeat 0 0;
+
+}
+
+
+
+
+
+
+
+div.view-resources-view img.file-icon{
+
+display:inline;
+
+}
+
+
+
+
+
+
+
+.not-front div.buttonsection {
+
+    padding: 10px 0 29px;
+
+}
+
+
+
+
+
+.not-front ul.breadcrumbs {
+
+    float: left;
+
+    padding: 0 0 20px 0;
+
+}
+
+
+
+div#block-block-32{
+
+float:right;
+
+padding: 8px 0 0;
+
+}
+
+
+
+div#block-block-33{
+
+float:left;
+
+}
+
+
+
+div#block-block-33 li{
+
+float:left;
+
+padding: 0 20px 0 0;
+
+}
+
+
+
+div#block-block-33 li a{
+
+float:left;
+
+padding: 0 20px 0 0;
+
+height: 32px;
+
+text-indent: -9999px;
+
+width: 137px;
+
+}
+
+
+
+div#edit-actions--2{
+
+clear:both;
+
+}
+
+
+
+div.field-type-taxonomy-term-reference{
+
+clear:both;
+
+}
+
+/******** Added By Developer ********/
+#edit-field-counties-served-tid-wrapper #edit-field-counties-served-tid {
+    display:none;
+}
+
+#edit-field-counties-served-tid-wrapper #edit-field-counties-served-tid option {
+    cursor: pointer;
+    padding:5px 0 0 5px;
+    text-decoration: underline;
+}
+
+.view-hospice-user-profiles .view-header #choose_county {
+    background-color: #488E2E;
+    border: 1px solid blue;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+    position: absolute;
+    width: 188px;
+}
+
+div.view-hospice-user-profiles div.view-filters {
+     padding-top: 26px;
+}
+
+/******** End of "Added By Developer" ********/

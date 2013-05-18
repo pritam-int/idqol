@@ -1,0 +1,19 @@
+(function($){
+	$(document).ready(function(){
+		
+		$('.link_container .link_cont').click(function(){			
+			var front_id = this.id;			
+			$.ajax({
+				type: "POST",
+				url: 'change_the_front',
+				data: "front_id=" + front_id,
+				success: function(msg) {
+				  window.location = msg;
+				}
+			});
+		});
+		
+	});
+})(jQuery);
+
+

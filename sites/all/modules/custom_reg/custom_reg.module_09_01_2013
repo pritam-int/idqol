@@ -1,0 +1,98 @@
+<?php
+
+function custom_reg_form_alter(&$form, &$form_state, $form_id){
+		if($form_id == "user_register_form"){
+			$user_type = arg(2);
+			if(empty($user_type)){
+				drupal_goto($path = 'choose_membership_type', $options = array(), $http_response_code = 302);
+			}
+			
+		    $form['payment_option'] = array (
+				      '#type' => 'radios',
+				      '#title' => t ('Payment Option'),
+				      '#options' => array(
+					0 => t('Invoice'),
+					1 => t('Paypal'),
+					),
+				      '#default_value' => 0,
+				      '#weight' => 50,
+				      '#description' => t('You must select any one payment option.'),
+				    );
+		    if(arg(2) == "hospice"){
+			$hospice_opt = array(250 => t('H-0 - Pre-certified (no past year admissions) - $250'),
+					350 => t('H-1 - Past year admissions (0-50 patients) - $350'),
+					400 => t('H-2 - Past year admissions (51-100 patients) - $400'),
+					450 => t('H-3 - Past year admissions (101-150 patients) - $450'),
+					525 => t('H-4 - Past year admissions (151-225 patients) - $525'),
+					675 => t('H-5 - Past year admissions (226-300 patients) - $675'),
+					900 => t('H-6 - Past year admissions (301-375 patients) - $900'),
+					1150 => t('H-7 - Past year admissions (376- 450 patients) - $1,150'),
+					1500 => t('H-8 - Past year admissions (451 or more patients) - $1,500'));
+			$form['pricing'] = array(
+			 '#type' => 'radios',
+			 '#title' => t('Select Pricing'),
+			 '#default_value' => 250,
+			 '#options' => $hospice_opt,
+			 '#description' => t('Please select the pricing as per the required category.'),
+			 '#weight' => -50,
+			 );
+		    }
+		    if(arg(2) == "business"){
+			$form['Pricing'] = array (
+				      '#type' => 'radios',
+				      '#title' => t ('Select Pricing'),
+				      '#options' => array(
+					100 => t('$100 for Local (city/county) Partners'),
+					200 => t('$200 for Regional (multi-county) Partners'),
+					400 => t('$400 for Statewide & National Partners'),
+					),
+				      '#default_value' => 100,
+				      '#description' => t('Please select the pricing as per the required category.'),
+				      '#weight' => -50,
+				    );
+			
+		    }
+		    if(arg(2) == "individual"){
+			$form['Pricing'] = array (
+				      '#type' => 'radios',
+				      '#title' => t ('Select Pricing'),
+				      '#options' => array(
+					50 => t('Join Now Individual Membership Pricing: $50'),
+					),
+				      '#default_value' => 50,
+				      '#weight' => -50,
+				    );
+			
+		    }
+		}
+	}
+	
+
+function custom_reg_user_presave(&$edit, $account, $category){
+		//echo "<pre>";
+		//echo "payment_option : ".$edit[payment_option];
+		//print_r($edit);
+		//exit();
+		$reqRoleArr = arg(2);
+		if($reqRoleArr == "business"){
+		  $edit['roles']['4'] = 1;
+		  $edit['roles']['7'] = 1;
+		}
+		if($reqRoleArr == "individual"){
+		  $edit['roles']['5'] = 1;
+		  $edit['roles']['7'] = 1;
+		}
+		if($reqRoleArr == "hospice"){
+		  $edit['roles']['6'] = 1;
+		  $edit['roles']['7'] = 1;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}

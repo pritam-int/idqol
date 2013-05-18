@@ -1,0 +1,233 @@
+<?php
+/**
+* Implements hook_init()
+*/
+function custom_reg_init() {
+    drupal_add_js(drupal_get_path('module', 'custom_reg') .'/js/custom_reg.js');
+}
+
+function custom_reg_form_alter(&$form, &$form_state, $form_id){
+		if($form_id == "user_register_form"){
+			$user_type = arg(2);
+			/*if(empty($user_type)){
+				drupal_goto($path = 'choose_membership_type', $options = array(), $http_response_code = 302);
+			}*/
+			
+		    if($user_type == "hospice"){
+		        $default_price = 250;
+			$hospice_opt = array(250 => t('H-0 - Pre-certified (no past year admissions) - $250'),
+					350 => t('H-1 - Past year admissions (0-50 patients) - $350'),
+					400 => t('H-2 - Past year admissions (51-100 patients) - $400'),
+					450 => t('H-3 - Past year admissions (101-150 patients) - $450'),
+					525 => t('H-4 - Past year admissions (151-225 patients) - $525'),
+					675 => t('H-5 - Past year admissions (226-300 patients) - $675'),
+					900 => t('H-6 - Past year admissions (301-375 patients) - $900'),
+					1150 => t('H-7 - Past year admissions (376- 450 patients) - $1,150'),
+					1500 => t('H-8 - Past year admissions (451 or more patients) - $1,500'));
+			$form['pricing'] = array(
+			 '#type' => 'radios',
+			 '#title' => t('Select Pricing'),
+			 '#default_value' => $default_price,
+			 '#options' => $hospice_opt,
+			 '#description' => t('Please select the pricing as per the required category.'),
+			 '#weight' => -50,
+			 '#prefix' => '<div id="custom_pricing_hospice">',
+			 '#suffix' => '</div></div>',
+			 );
+		    } else if($user_type == "business"){
+		        $default_price = 100;
+			$form['pricing'] = array (
+				      '#type' => 'radios',
+				      '#title' => t ('Select Pricing'),
+				      '#options' => array(
+					100 => t('$100 for Local (city/county) Partners'),
+					200 => t('$200 for Regional (multi-county) Partners'),
+					400 => t('$400 for Statewide & National Partners'),
+					),
+				      '#default_value' => $default_price,
+				      '#description' => t('Please select the pricing as per the required category.'),
+				      '#weight' => -50,
+				      '#prefix' => '<div id="custom_pricing_business">',
+				      '#suffix' => '</div></div>',
+				    );
+			
+		    } else if($user_type == "individual"){
+		        $default_price = 50;
+			$form['pricing'] = array (
+				      '#type' => 'radios',
+				      '#title' => t ('Select Pricing'),
+				      '#options' => array(
+					50 => t('Join Now Individual Membership Pricing: $50'),
+					),
+				      '#default_value' => $default_price,
+				      '#weight' => -50,
+				      '#prefix' => '<div id="custom_pricing_individual">',
+				      '#suffix' => '</div></div>',
+				    );
+			
+		    } else {
+				drupal_goto($path = 'choose_membership_type', $options = array(), $http_response_code = 302);
+		    }
+		    
+		    $form['total'] = array(
+				'#markup' => '<div class="total_cont"><div class="total_value"><spam class="label">Total Price</spam><spam class="total_val"><strong>$</strong><em class="amount">'.$default_price.'</em></spam></div></div>',
+				'#weight' => 23,
+		    );
+		    
+		    return $form;
+		    
+		}
+	}
+	
+
+function custom_reg_user_presave(&$edit, $account, $category){
+		//echo "<pre>";
+		//echo "payment_option : ".$edit[payment_option];
+		//print_r($edit);
+		//exit();
+		$reqRoleArr = arg(2);
+		if($reqRoleArr == "business"){
+		  $edit['roles']['4'] = 1;
+		  $edit['roles']['7'] = 1;
+		}
+		if($reqRoleArr == "individual"){
+		  $edit['roles']['5'] = 1;
+		  $edit['roles']['7'] = 1;
+		}
+		if($reqRoleArr == "hospice"){
+		  $edit['roles']['6'] = 1;
+		  $edit['roles']['7'] = 1;
+		}
+		
+	}
+	
+	
+function custom_reg_user_insert(&$edit, $account, $category){
+	$user_type = arg(2);
+	$pricing = $edit[pricing];
+	if($user_type == hospice){
+		if($pricing == 250){
+			$membership_pricing_term = 52;
+		}
+		if($pricing == 350){
+			$membership_pricing_term = 53;
+		}
+		if($pricing == 400){
+			$membership_pricing_term = 54;
+		}
+		if($pricing == 450){
+			$membership_pricing_term = 55;
+		}
+		if($pricing == 525){
+			$membership_pricing_term = 56;
+		}
+		if($pricing == 675){
+			$membership_pricing_term = 57;
+		}
+		if($pricing == 900){
+			$membership_pricing_term = 58;
+		}
+		if($pricing == 1150){
+			$membership_pricing_term = 59;
+		}
+		if($pricing == 1500){
+			$membership_pricing_term = 60;
+		}
+		
+	}
+	
+	if($user_type == business){
+		if($pricing == 100){
+			$membership_pricing_term = 48;
+		}
+		if($pricing == 200){
+			$membership_pricing_term = 49;
+		}
+		if($pricing == 400){
+			$membership_pricing_term = 50;
+		}
+		
+	}
+	
+	if($user_type == individual){
+		$membership_pricing_term = 61;
+	}
+	
+	$user_obj = user_load($edit[uid]);
+	
+	$user_obj->field_membership_pricing_tag[LANGUAGE_NONE][0]['tid'] = $membership_pricing_term;
+	$user_obj->field_pricing[LANGUAGE_NONE][0]['value'] = $pricing;
+	user_save($user_obj);
+	
+	/****************Auto Login user***************/
+	global $user;
+	$user = user_load($user_obj->uid);
+	drupal_session_regenerate();
+	/****************Auto Login user ends***************/
+	
+	
+	$term_obj   = taxonomy_term_load($membership_pricing_term);
+	$term_title = $term_obj->name;
+	global $base_url;
+	
+	//Invoice = 0 &&  Paypal = 1
+	if($user_obj->field_payment_option[und][0][value] == 0){
+		
+		/*************Approval email to Admin*************/
+		$site_email = variable_get('site_mail', '');
+		$to = $site_email;
+		$subject = "Idaho Quality Of Life - Invoice request for new registration";
+		$message = "Hello Admin,<br>Please issue proper invoice for the newly registered user :<br><br>".$base_url."/user/".$edit[uid]."<br>User Category :<b>".$term_title."</b><br><br>Thank you.<br>Idaho Quality Of Life";
+		send_mail($to, $subject, $message);
+		//drupal_set_message(t("Your account has been created !"), 'status');
+		drupal_goto($path = 'node/66', $options = array(), $http_response_code = 302);
+	}
+	
+	if($user_obj->field_payment_option[und][0][value] == 1){
+		/* Paypal function */
+		$amount = $pricing;
+		$item_name = str_replace("&", "and", $term_title);
+		$cancel_url = $base_url;
+		$return_url = $base_url."/node/66";
+		
+		$url = 'https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=info@idahendoflfe.org&currency_code=USD&item_name='.$item_name.'&amount='.$amount.'&no_shipping=1&return='.$return_url.'&cancel_return='.$cancel_url;
+		drupal_goto($path = $url, $options = array(), $http_response_code = 302);
+	}
+	
+
+}
+	
+	/* Email function */
+function send_mail($to, $subject, $message) {
+	$my_module = 'custom_reg';
+	$my_mail_token = microtime();
+	$from = variable_get('site_mail', '');
+	$message = array(
+	  'id' => $my_module . '_' . $my_mail_token,
+	  'to' => $to,
+	  'subject' => $subject,
+	  'body' => array($message),
+	  'headers' => array(
+	    'From' => $from, 
+	    'Sender' => $from, 
+	    'Return-Path' => $from,
+	  ),
+	);
+	$system = drupal_mail_system($my_module, $my_mail_token);
+	$message = $system->format($message);
+	if ($system->mail($message)) {
+	  return TRUE;
+	}
+	else {
+	  return FALSE;
+	}
+}
+	/* Email function ends*/ 	
+	
+	
+	
+	
+	
+	
+	
+	

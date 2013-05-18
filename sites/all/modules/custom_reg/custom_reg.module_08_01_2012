@@ -1,0 +1,132 @@
+<?php
+
+    /**	* Implementation of hook_permission().
+	*/
+	function custom_reg_permission() {
+	  // Restrict access to either of your new URLs.
+	  return array(
+	    'access membership type page' => array(
+	      'title' => t('Access membership type page'),
+	      'description' => t('Allow users to access membership type page'),
+	    ),
+	  );
+	}
+	
+    /***
+    * hook_menu
+    ***/
+    function custom_reg_menu() {        
+            $items = array();            
+            $items['choose_membership_type_old'] = array(
+		'title' => 'Choose membership type',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('choose_type'),
+		'access arguments' => array('access job page'),
+		'access callback' => 'user_access',
+		'type' => MENU_NORMAL_ITEM,
+            );
+	    
+	    $items['member_signup_form_old/%'] = array(
+		'title' => t('Please fill up the membership form'),
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('member_signup_form'),
+		'access arguments' => array('access job page'),
+		'type' => MENU_NORMAL_ITEM,
+	);
+	   
+            return $items;
+    }
+    
+    function member_signup_form() {
+      $form = array();
+      $form['#attributes'] = array('enctype' => "multipart/form-data");
+      
+      $initial_markup = "<div class='markup_data'>This is test text</div>";
+      $form['member_signup_form'] = array(
+		'#type' => 'fieldset',
+		'#title' => t('Please fill up the following fields'),
+		'#collapsible' => TRUE,
+		'#collapsed' => FALSE,
+		//'#attributes' => array('class' => 'signup_form_class'),
+	);
+      
+      $form['member_signup_form']['information'] = array(
+		'#type' => 'markup',
+		'#prefix' => '<div id="box">',
+		'#suffix' => '</div>',
+		'#value' => $initial_markup,
+	);
+      
+      return $form;
+      
+    }
+    
+    /***
+    * function to create choose type form
+    ***/
+    function choose_type() {
+	
+        $form = array();
+	$form['#attributes'] = array('enctype' => "multipart/form-data");
+
+	$active = array(0 => t('Business/Organization'), 1 => t('Individual'), 2 => t('Hospice'));
+	$form['membertype'] = array(
+	 '#type' => 'radios',
+	 '#prefix' => '<div class="form_field_membertype">',
+	 //'#title' => t('Choose your membership type'),
+	 '#options' => $active,
+	 //'#default_value' => isset($node->active) ? $node->active : 1,
+	 '#description' => t('You must have to choose your desired membership type.'),
+	 '#required' => true,
+	 '#suffix' => "</div>",
+       );
+		
+	$form['submit'] = array (
+	   '#prefix' => '<div id="membertype_submit">',
+	   '#type' => 'submit',
+	   '#value' => 'Submit',
+	   '#suffix' => '</div>'
+	);
+	
+	return $form;
+    }
+    
+     /***
+    * hook_form_validate
+    ***/
+    function choose_type_validate($form, &$form_state) {
+     
+    }
+    
+     /***
+    * hook_submit
+    ***/
+    function choose_type_submit($form, &$form_state) {
+	
+	$membertype = trim($form_state['values']['membertype']);
+
+	$validators = array('file_validate_extensions' => array());
+	
+	drupal_goto("member_signup_form/".$membertype);
+	
+	}
+	
+   
+    function custom_reg_user_presave(&$edit, $account, $category){
+	  $reqRoleArr = arg(2);
+	  if($reqRoleArr == "business"){
+	    $edit['roles']['4'] = 1;
+	    $edit['roles']['7'] = 1;
+	  }
+	  if($reqRoleArr == "individual"){
+	    $edit['roles']['5'] = 1;
+	    $edit['roles']['7'] = 1;
+	  }
+	  if($reqRoleArr == "hospice"){
+	    $edit['roles']['6'] = 1;
+	    $edit['roles']['7'] = 1;
+	  }
+	}
+	
+	
+	

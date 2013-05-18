@@ -1,0 +1,59 @@
+<?php
+  /***
+  ** hook_init
+  ***/
+  /*function qol_init() {
+    drupal_add_js(drupal_get_path('module', 'qol') .'/js/qol.js');
+  }*/
+  
+  /***
+  ** hook_menu
+  ***/
+  function qol_menu() {        
+    $items = array();            
+    $items['change_the_front/%'] = array(
+      'page callback' => 'qol_front_size',
+      'access callback' => true,
+      'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+  }
+  
+  /***
+  * function to Save Character Details
+  ***/
+  function qol_front_size() { 
+    //$front_size_id = check_plain($_REQUEST['front_id']);
+    $front_size_id = check_plain(arg(1));
+    switch($front_size_id) {
+      case 'link_cont1':
+	$_SESSION['front_size'] = 'font-size1.css';
+	$_SESSION['link_cont1_active'] = 'active';
+	$_SESSION['link_cont2_active'] = '';
+	break;
+      
+      case 'link_cont2':
+	$_SESSION['front_size'] = 'font-size2.css';
+	$_SESSION['link_cont2_active'] = 'active';
+	$_SESSION['link_cont1_active'] = '';
+	break;
+      
+      default:
+	$_SESSION['front_size'] = 'font-size1.css';
+	$_SESSION['link_cont1_active'] = 'active';
+	$_SESSION['link_cont2_active'] = '';
+	break;
+    }
+    //print $path = 'http://'.$_SERVER['HTTP_HOST'].base_path();
+    $path = $_SERVER['HTTP_REFERER'];    
+    drupal_goto($path);
+  }
+  
+  /**
+  * To display an array in proper formate
+  **/
+  function pre_disp($array){
+    echo "<pre>";
+    print_r($array);
+    echo "</pre>";
+  }
